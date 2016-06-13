@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ChatOps - Comunicação, Deployments rápidos, times satisfeitos.</title>
+  <meta name="description" content="ChatOps - o que é?Vamos começar por aqui.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://fernandonogueira.io/2015/07/27/chatops-comunicao-deployments-rpidos-times-satisfeitos.html">
+  <link rel="alternate" type="application/rss+xml" title="fernandonogueira.io" href="http://fernandonogueira.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">fernandonogueira.io</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        
+
+
+<div class="post">
+
+    <header class="post-header">
+        <h1 class="post-title">ChatOps - Comunicação, Deployments rápidos, times satisfeitos.</h1>
+        <span class="post-meta">
+        <ul class="post-details">
+            <li class="date" style="background: url(//ioexception.io/assets/images/time.svg) no-repeat; background-size: 28px;"><p>Jul 27, 2015</p></li>
+            
+            <li class="author-small" style="background-image: url('//www.gravatar.com/avatar/18a85265f9f4d5bd06afe3479ccd44fd?s=135')">
+            <!--<li class="author-small" style="background-image: url('//www.gravatar.com/avatar/18a85265f9f4d5bd06afe3479ccd44fd?s=135')">-->
+                <div class="author-small-name">Fernando Nogueira</div>
+            </li>
+            
+        </ul>
+        </span>
+    </header>
+
+    <article class="post-content">
+        <h2 id="chatops---o-que-">ChatOps - o que é?</h2>
+<p>Vamos começar por aqui.</p>
+
+<p>ChatOps é um termo muito creditado ao pessoal do Github. Se formos resumir, podemos dizer que é “<em>conversation-driven development</em>”. Usando um <em>bot</em> com <em>plugins</em> e <em>scripts</em>, os times podem automatizar tarefas e colaborar, jogando fora os procedimentos repetitivos e economizando tempo.</p>
+
+<p>Para aplicar isso, os times usam bots para automatizar os procedimentos manuais e repetitivos. Alguns dos mais conhecidos são o <a href="https://hubot.github.com">Hubot</a> e o <a href="https://www.lita.io">Lita</a>.</p>
+
+<p><img src="http://fernandonogueira.io/assets/images/2015/07/hubot.png" alt="hubot-image" /></p>
+
+<h2 id="a-namedeployments-praticosadeployments-prticos"><a name="deployments-praticos"></a>Deployments práticos</h2>
+<p>Podemos usar <em>bots</em> para automatizar muitas coisas, como realizar <em>backups</em>, notificar colaboradores sobre algum evento (alguma modificação em <em>issues</em>/<em>tasks</em>, por exemplo), preparação de novos ambientes, <em>code deployments</em>, etc. Hoje focarei mais no último: <em><strong>code deployments</strong></em>.</p>
+
+<p>Sabe aquele procedimento chato que você teve que fazer com Shell Script? Copiava uma coisa pra uma máquina, rodava um script alí, mudava umas configurações e rodava a aplicação? É ele mesmo que vamos focar aqui. Vamos acabar com isso. Vamos mandar os bots fazerem tudo pra nós. Quando terminarem que nos avise.</p>
+
+<p><a name="imagem-exemplo-deployment"></a><br />
+<img src="http://fernandonogueira.io/assets/images/2015/07/chatops-1-jarvis-deploy2.png" alt="bots-escravos" /></p>
+
+<p>Gostou da ideia?</p>
+
+<h2 id="code-deployments---frequncia-e-durao"><em>Code deployments</em> - Frequência e duração</h2>
+<p>A frequência do <em>deploy</em> do(s) produto(s) que você trabalha diariamente, provavelmente, tem relação com o tempo gasto para cada <em>deployment</em> que é feito nos ambientes de qualidade/<em>staging</em> e produção. </p>
+
+<p>Esse assunto é velho, mas será que seu time está tirando o maior proveito possível deste processo? Não temos como saber, mas se os seus <em>deploys</em> não estão muito frequentes, talvez seja um sinal que é possível melhorar.</p>
+
+<h2 id="contextualizao">Contextualização</h2>
+<p>Esse negócio de ChatOps surgiu na minha vida profissional em um time que o adotou quando estava começando a trabalhar com alguns elementos que até “pouco” tempo atrás eram novidade: <em>feature branches</em>, <em>microservices</em>, etc. Meu desafio aqui, é relatar a experiência e os benefícios identificados em uma equipe em que tais práticas foram adotadas, já o seu é perceber se há ou não benefícios para seu time adotar algo aqui dito.</p>
+
+<p>Claro que tudo é questão de perspectiva. Alguns times adotaram, outros não quiseram ou não tiveram necessidade. O fato é que hoje <em>feature branches</em> e <em>microservices</em> são assuntos massificados e muitas vezes precisamos tornar certos procedimentos mais eficientes, mas a história aqui é outra. Vamos em frente. </p>
+
+<p>Até aqui… Lhe contextualizei o suficiente?</p>
+
+<p>O motivo de adotarmos tais praticas posso contar no futuro. A escolha é do leitor.</p>
+
+<p>Então voltemos a focar apenas no nosso processo de <em>code deployment</em>.</p>
+
+<h2 id="a-vida-do-time-antes-do-chatops">A vida do time antes do ChatOps</h2>
+<p>O processo de <em>deploy</em> durava até 30 minutos. O time utilizava apenas o Bamboo, da Atlassian, para integração contínua.</p>
+
+<p>O elemento mais adequado para ser classificado como “legado” do nosso sistema é o servidor web, escrito em Java, que publica uma API REST para ser consumida pelo front-end e pelas aplicações móveis (iOS e Android).<br />
+Este servidor Java, era o qual mais realizávamos <em>deployments</em> diariamente. Tanto pelo time de qualidade, quanto pelo time de operações, em produção. <br />
+O processo de <em>deploy</em> era muito lento, principalmente para o time de qualidade.</p>
+
+<p>O time de <em>QA</em> realizava procedimentos manuais como baixar o artefato, fazer acesso remoto (SSH), etc. mas tudo começava pelo <em>build</em>, que era composto por: <br />
+- Rodar testes unitários;<br />
+- Gerar o artefato no servidor de <em>CI</em> (Bamboo);<br />
+- Rodar análise de qualidade do Sonarqube;<br />
+- Baixar o artefato gerado (.war);<br />
+- Enviar para o servidor e rodar um script para  realizar a atualização.</p>
+
+<p>Agora, imagine esses passos para cada <em>feature branch</em> a ser testado pela qualidade? Pois é! Muito tempo perdido!<br />
+Além disso, o time de qualidade possuía alguns ambientes para testar, e eles precisavam saber de forma rápida qual versão/<em>feature branch</em>/<em>revision</em> estava rodando em cada um destes ambientes. Como resolver?</p>
+
+<p>Com ChatOps!</p>
+
+<h2 id="bots-so-divertidos">Bots são divertidos</h2>
+<p>Nesse ponto, decidimos testar a ideia e encontramos o <em><strong>Hubot</strong></em> e outras ferramentas divertidas. Decidimos também descomplicar tudo que fosse possível, mantendo apenas o que fosse necessário para não retroceder na qualidade do software.<br />
+O Hubot nos permite usar <a href="http://coffeescript.org"><em><strong>CoffeeScript</strong></em></a> para criar scripts e construir comandos que fazem o trabalho daqueles passos manuais, assim podemos descarta-los. <br />
+Todo processo que antes era feito de forma manual ou que é dispendioso, podemos deixar por conta do Hubot.<br />
+Onde existem vários passos, podemos transformar em apenas um comando, como <code>hubot do stuff</code> e ele fará por você, como pode ver em uma das <a href="#imagem-exemplo-deployment">imagens mostradas anteriormente</a>.</p>
+
+<p>É nesse ponto que começa a diversão!</p>
+
+<p>Nosso objetivo era realizar automaticamente todos aqueles procedimentos que precisavam ser feitos de forma semi-manual, focando no <em>code deployment</em>.<br />
+O que quero dizer com focar no <em>code deployment</em>?<br />
+O Bamboo realiza varias tasks para garantir a qualidade do software. Algumas dessas tasks são meio lentas, e se precisássemos esperar por elas diversas vezes por dia, resultava em muito tempo perdido.</p>
+
+<p>Com isso, <strong>pelo menos por enquanto (quem sabe?)</strong>, precisamos manter o Bamboo para continuar executando os procedimentos que asseguram o rastreio da qualidade do software, mas podemos utilizar outras ferramentas em paralelo para realizar o deploy. O Bamboo continua gerando artefatos, rodando Sonarqube, etc e, em paralelo, fazemos nossos deploys. :)</p>
+
+<p>Precisamos de um aplicativo de <strong>IM</strong> (<em>Instant Messaging</em>) qualquer para utilizar com o Hubot (IRC, Flowdock, Slack, HipChat, etc). Escolhemos o <strong>Slack</strong>.</p>
+
+<p>Até aqui:<br />
+* Matemos o Bamboo para rodar todas as tarefas que asseguram a qualidade do software;<br />
+* Escolhemos o Hubot para ser nosso bot.<br />
+* Escolhemos o Slack como IM.</p>
+
+<p>Com ChatOps, o deployment pode ser iniciado por qualquer um e, ainda, de forma assíncrona. Desta forma, precisamos de um lugar para centralizar o controle de todos os deployments.</p>
+
+<p>Por isso, precisamos entender um pouco a API de Deployments do Github, pois tudo gira em torno dela. É lá que vamos centralizar o controle de nossos deployments.</p>
+
+<h2 id="descobrindo-a-api-de-deployments-do-github">Descobrindo a API de Deployments do Github</h2>
+
+<p>O Github lançou há um tempo a API de Deployments. <br />
+Resumindo, ela serve meio como um CRUD de deployments.</p>
+
+<p>Você pode criar um Deployment e relacionar ele a uma <em>revision</em>/<em>tag</em>/<em>branch</em> do seu projeto/repositório.</p>
+
+<p>O Github vai guardar isso e você pode registrar <strong><em>webhooks</em></strong> para que outra ferramenta faça alguma coisa após a criação deste <em>deployment</em>, como por exemplo realizar o deployment propriamente dito.</p>
+
+<p>Esse deployment registrado no Github pode ter seu status atualizado (<strong><em>pending</em></strong>/<strong><em>started</em></strong>/<strong><em>completed</em></strong>).</p>
+
+<p>Abaixo tem um diagrama de sequencia retirado de uma <a href="https://developer.github.com/v3/repos/deployments/">página do Github</a> que fala sobre essa API de Deployments. Dê uma olhada:</p>
+
+<pre>
++---------+             +--------+            +-----------+        +-------------+
+| Tooling |             | GitHub |            | 3rd Party |        | Your Server |
++---------+             +--------+            +-----------+        +-------------+
+     |                      |                       |                     |
+     |  Create Deployment   |                       |                     |
+     |---------------------&gt;|                       |                     |
+     |                      |                       |                     |
+     |  Deployment Created  |                       |                     |
+     |&lt;---------------------|                       |                     |
+     |                      |                       |                     |
+     |                      |   Deployment Event    |                     |
+     |                      |----------------------&gt;|                     |
+     |                      |                       |     SSH+Deploys     |
+     |                      |                       |--------------------&gt;|
+     |                      |                       |                     |
+     |                      |   Deployment Status   |                     |
+     |                      |&lt;----------------------|                     |
+     |                      |                       |                     |
+     |                      |                       |   Deploy Completed  |
+     |                      |                       |&lt;--------------------|
+     |                      |                       |                     |
+     |                      |   Deployment Status   |                     |
+     |                      |&lt;----------------------|                     |
+     |                      |                       |                     |
+</pre>
+
+<h2 id="colando-as-partes">Colando as partes</h2>
+
+<p>Tá. Agora vamos juntar as partes.</p>
+
+<p>Tem um script do Hubot para registrar os <em>deployments</em> lá na API do Github. O <a href="https://github.com/atmos/hubot-deploy">hubot-deploy</a>, do <a href="https://github.com/atmos">@atmos</a>. Vamos usa-lo pra criar nosso deployments.</p>
+
+<p>Porém, os deployments criados no Github precisam ser coordenados. É necessário também ter alguma ferramenta para receber os <em>webhooks</em> de deployment do Github. No diagrama acima, essa ferramenta está descrita como <code>3rd Party</code>. <br />
+Tem um projeto, também de autoria do <a href="https://github.com/atmos">@atmos</a>, para isso: o <a href="https://github.com/atmos/heaven">heaven</a>.</p>
+
+<p>O Heaven possui integração com diversas ferramentas de deployment. Sozinho ele basicamente consome a API do Github e identifica qual repositório precisa clonar e qual <em>revision</em> precisa fazer checkout. O resto do trabalho ele deixa com alguma ferramenta a <em>sua</em> escolha. Essa ferramenta pode ser uma das disponíveis ou facilmente você pode escrever uma simples classe Ruby e fazer do seu jeito.</p>
+
+<p>Ele possui integração com <strong>fabric</strong>, <strong>capistrano</strong>, <strong>AWS OPSWorks</strong> e algumas outras já prontas.</p>
+
+<p>Nós escolhemos utilizar o <a href="http://www.fabfile.org">fabric</a>, que é um framework simples feito em python para realizar deployments em múltiplas máquinas.</p>
+
+<p>Lá é que rodamos o <code>mvn clean package</code> para gerar o <code>.war</code> (Java, não é?) e enviamos para o servidor, que está na nuvem (na <a href="http://www.fabfile.org">AWS</a>, no caso), realizamos as configurações e tudo que for necessário para deixar a aplicação atualizada e funcionando.</p>
+
+<h2 id="hmm-e-a-tem-vantagem">Hmm… E aí, tem vantagem?</h2>
+
+<p>No fim, ficou assim:</p>
+
+<pre><code>+---------+             +--------+            +----------+         +-------------+
+|  Hubot  |             | GitHub |            |  Heaven  |         | Your Server |
++---------+             +--------+            +----------+         +-------------+
+     |                      |                       |                     |
+     |  Create Deployment   |                       |                     |
+     |---------------------&gt;|                       |                     |
+     |                      |                       |                     |
+     |  Deployment Created  |                       |                     |
+     |&lt;---------------------|                       |                     |
+     |                      |                       |                     |
+     |                      |   Deployment Event    |                     |
+     |                      |----------------------&gt;|                     |
+     |                      |                       |     SSH+Deploys     |
+     |                      |                       |--------------------&gt;|
+     |                      |                       |                     |
+     |                      |   Deployment Status   |                     |
+     |                      |&lt;----------------------|                     |
+     |                      |                       |                     |
+     |                      |                       |   Deploy Completed  |
+     |                      |                       |&lt;--------------------|
+     |                      |                       |                     |
+     |                      |   Deployment Status   |                     |
+     |                      |&lt;----------------------|                     |
+     |                      |                       |                     |
+</code></pre>
+
+<p>Um simples comando e todo o trabalho de deployment é feito pra nós:<br />
+<img src="http://fernandonogueira.io/assets/images/2015/07/chatops-1-jarvis-deploy2.png" alt="bots-escravos" /></p>
+
+<p>Como pode ver, o tempo para realizar o deployment e ter a aplicação funcionando, é de 3 minutos hoje em dia. Eu mencionei anteriormente que esse tempo era por volta de ~15 minutos.</p>
+
+<p>Além disso, todos do time podem ver o que está acontecendo e quais ambientes estão sendo utilizados. Isso economiza tempo. Ninguém precisa parar ninguém para perguntar. (Lembra que antes o time precisava criar um controle para saber qual versão/branch estava em cada ambiente?!)</p>
+
+<p>O hubot-deploy também disponibiliza outros comandos interessantes como o que lista os deployments realizados em um ambiente específico: <code>hubot deploys PROJECT in ENV</code>. Esse comando ajuda a saber quais <em>feature branches</em> estão aplicados em cada um dos seus ambientes ou qual versão está em produção, por exemplo.</p>
+
+<p><img src="http://fernandonogueira.io/assets/images/2015/07/hubot-deploys-env.png" alt="hubot-deploys-env" /></p>
+
+<p>Isso tudo deixou o time mais rápido, os deployments mais rápidos e, consequentemente, melhorou todo o processo do time em geral, mitigando o tempo perdido com tudo o que foi mencionado neste post.</p>
+
+<p>Posteriormente, caso exista interesse, posso criar um tutorial envolvendo hubot, hubot-deploy, heaven e fabric.</p>
+
+<p>Mas e aí? Será que isso traria alguma vantagem para o seu time? Isso é só uma das poucas coisas que podemos fazer com o Hubot.<br />
+;)</p>
+
+
+    </article>
+
+    <footer class="related-posts">
+    
+    <div class="related-posts-hbar"></div>
+    <h4>Related posts</h4>
+    <ul>
+        
+        <li>
+                <a href="/jekyll/update/2015/07/05/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+        </li>
+        
+    </ul>
+    
+</footer>
+
+    
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ioexceptionio';
+    var disqus_identifier = "/2015/07/27/chatops-comunicao-deployments-rpidos-times-satisfeitos.html";    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">fernandonogueira.io</h2>
+
+    <!--<div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>fernandonogueira.io</li>
+          <li><a href="mailto:contact@fernandonogueira.io">contact@fernandonogueira.io</a></li>
+        </ul>
+      </div>-->
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <!--<p class="text">Fernando Nogueira Tech Blog
+</p>-->
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

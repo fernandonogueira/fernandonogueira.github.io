@@ -1,0 +1,53 @@
+# Site settings
+title: fernandonogueira.io
+email: contact@fernandonogueira.io
+description: > # this means to ignore newlines until "baseurl:"
+  Fernando Nogueira Tech Blog
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://fernandonogueira.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+gravatar_small_size: 135
+
+authors:
+  clerton:
+    name: Clêrton Leal
+    display_name: Clêrton Leal
+    gravatar: clertonleal@gmail.com
+    gravatar_hash: e627f77dbc8a36303d4c62665d05b4b5
+    email: clerton@ioexception.io
+    web: http://ioexception.io
+    twitter: ClertonLeal
+    github: clertonleal
+  fernando:
+    name: Fernando Nogueira
+    display_name: Fernando Nogueira
+    gravatar: fernandojnn@gmail.com
+    gravatar_hash: 18a85265f9f4d5bd06afe3479ccd44fd
+    email: fernando@ioexception.io
+    web: http://ioexception.io
+    twitter: fernandojnn
+    github: fernandojnn
+  lourenco:
+    name: Lourenço Marinho
+    display_name: Lourenço Marinho
+    gravatar: lourenco.pmarinho@gmail.com
+    gravatar_hash: a55644deca9bde7d50ef7346ebf57599
+    email: lourenco@ioexception.io
+    web: http://ioexception.io
+    twitter: lopima
+    github: lourenco-marinho
+  paulo:
+    name: Paulo Costa
+    display_name: Paulo Costa
+    gravatar: paulombcosta@gmail.com
+    gravatar_hash: 8c3c5ffcaccaf0e8e8227be35638ffdd
+    email: paulo@ioexception.io
+    web: http://ioexception.io
+    twitter: paulombcosta
+    github: paulombcosta
