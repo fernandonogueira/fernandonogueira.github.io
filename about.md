@@ -4,10 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Ah, somos um grupo hipster de programadores, por enquanto presos em Fortaleza/CE.
-Um dia tivemos essa NOVÍSSIMA ideia de criar um blog.
-Criamos e aqui está. Começando.
+Ah...
+Eu faço uns programas aí.
 
-Mas quem somos mesmo?
+Algumas tags da minha vida profissional: Java, Spring, Python, Ansible, DevOps, Microservices, Continuous Deployment, AWS, Automation, Docker.
 
-Calma aí... :)
+Até. ;)
