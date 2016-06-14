@@ -7,10 +7,7 @@ comments: true
 tags: [ Hubot, deploy, heaven, github ]
 css_classes: [ permalink ]
 ---
-
 ## ChatOps - o que é?
-Vamos começar por aqui. 
-
 ChatOps é um termo muito creditado ao pessoal do Github. Se formos resumir, podemos dizer que é "_conversation-driven development_". Usando um _bot_ com _plugins_ e _scripts_, os times podem automatizar tarefas e colaborar, jogando fora os procedimentos repetitivos e economizando tempo.
 
 Para aplicar isso, os times usam bots para automatizar os procedimentos manuais e repetitivos. Alguns dos mais conhecidos são o [Hubot][hubot] e o [Lita][lita].
@@ -21,7 +18,7 @@ Para aplicar isso, os times usam bots para automatizar os procedimentos manuais 
 ## <a name="deployments-praticos"></a>Deployments práticos
 Podemos usar _bots_ para automatizar muitas coisas, como realizar _backups_, notificar colaboradores sobre algum evento (alguma modificação em _issues_/_tasks_, por exemplo), preparação de novos ambientes, _code deployments_, etc. Hoje focarei mais no último: _**code deployments**_.
 
-Sabe aquele procedimento chato que você teve que fazer com Shell Script? Copiava uma coisa pra uma máquina, rodava um script alí, mudava umas configurações e rodava a aplicação? É ele mesmo que vamos focar aqui. Vamos acabar com isso. Vamos mandar os bots fazerem tudo pra nós. Quando terminarem que nos avise.
+Sabe aquele procedimento chato que você teve que fazer com Shell Script? Copiava uma coisa pra uma máquina, rodava um script alí, mudava umas configurações e rodava a aplicação? É nele mesmo que vamos focar aqui. Vamos acabar com isso. Vamos mandar os bots fazerem tudo pra nós. Quando terminarem que nos avise.
 
 <a name="imagem-exemplo-deployment"></a>
 ![bots-escravos]({{ site.url }}/assets/images/2015/07/chatops-1-jarvis-deploy2.png)
@@ -34,24 +31,21 @@ A frequência do _deploy_ do(s) produto(s) que você trabalha diariamente, prova
 Esse assunto é velho, mas será que seu time está tirando o maior proveito possível deste processo? Não temos como saber, mas se os seus _deploys_ não estão muito frequentes, talvez seja um sinal que é possível melhorar.
 
 ## Contextualização
-Esse negócio de ChatOps surgiu na minha vida profissional em um time que o adotou quando estava começando a trabalhar com alguns elementos que até "pouco" tempo atrás eram novidade: _feature branches_, _microservices_, etc. Meu desafio aqui, é relatar a experiência e os benefícios identificados em uma equipe em que tais práticas foram adotadas, já o seu é perceber se há ou não benefícios para seu time adotar algo aqui dito.
+Esse negócio de ChatOps surgiu na minha vida profissional em um time que o adotou quando estava começando a trabalhar com alguns elementos que até relativamente pouco tempo atrás eram novidade: _feature branches_, _microservices_, etc. Meu desafio aqui, é relatar a experiência e os benefícios identificados em uma equipe em que tais práticas foram adotadas.
 
 Claro que tudo é questão de perspectiva. Alguns times adotaram, outros não quiseram ou não tiveram necessidade. O fato é que hoje _feature branches_ e _microservices_ são assuntos massificados e muitas vezes precisamos tornar certos procedimentos mais eficientes, mas a história aqui é outra. Vamos em frente. 
 
 Até aqui... Lhe contextualizei o suficiente?
-
-O motivo de adotarmos tais praticas posso contar no futuro. A escolha é do leitor.
-
 Então voltemos a focar apenas no nosso processo de _code deployment_.
 
 ## A vida do time antes do ChatOps
 O processo de _deploy_ durava até 30 minutos. O time utilizava apenas o Bamboo, da Atlassian, para integração contínua. 
 
-O elemento mais adequado para ser classificado como "legado" do nosso sistema é o servidor web, escrito em Java, que publica uma API REST para ser consumida pelo front-end e pelas aplicações móveis (iOS e Android).
+O elemento mais adequado para ser classificado como "legado" do nosso sistema é um servidor web, escrito em Java, que publica uma API REST para ser consumida pelo front-end e pelas aplicações móveis (iOS e Android).
 Este servidor Java, era o qual mais realizávamos _deployments_ diariamente. Tanto pelo time de qualidade, quanto pelo time de operações, em produção. 
-O processo de _deploy_ era muito lento, principalmente para o time de qualidade.
+O processo de _deploy_ era muito lento, e isso afetava principalmente o time de qualidade (_QA_).
 
-O time de _QA_ realizava procedimentos manuais como baixar o artefato, fazer acesso remoto (SSH), etc. mas tudo começava pelo _build_, que era composto por: 
+O time de _QA_ realizava procedimentos manuais como baixar o artefato (.war), fazer acesso remoto (SSH), etc. mas tudo começava pelo _build_, que era composto por: 
 - Rodar testes unitários;
 - Gerar o artefato no servidor de _CI_ (Bamboo);
 - Rodar análise de qualidade do Sonarqube;
@@ -194,6 +188,9 @@ Posteriormente, caso exista interesse, posso criar um tutorial envolvendo hubot,
 Mas e aí? Será que isso traria alguma vantagem para o seu time? Isso é só uma das poucas coisas que podemos fazer com o Hubot.
 ;)
 
+#### Revisões:
+_14 Jun 2016_ :)
+
 
 [github-deployments-api-page]: https://developer.github.com/v3/repos/deployments/
 [hubot-deploy]: https://github.com/atmos/hubot-deploy
@@ -204,16 +201,6 @@ Mas e aí? Será que isso traria alguma vantagem para o seu time? Isso é só um
 [hubot]: https://hubot.github.com
 [lita]: https://www.lita.io
 [coffeescript]: http://coffeescript.org
-
-
-
-
-
-
-
-
-
-
 
 
 
